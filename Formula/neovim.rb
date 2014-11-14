@@ -39,4 +39,10 @@ class Neovim < Formula
 
     system "make", "CMAKE_BUILD_TYPE=RelWithDebInfo", "CMAKE_EXTRA_FLAGS=\"-DCMAKE_INSTALL_PREFIX:PATH=#{prefix}\"", "install"
   end
+
+  test do
+    (testpath/"test.txt").write("Hello World from Vim!!")
+    system bin/"nvim", "-u", "NONE", "+s/Vim/Neovim/g", "+wq", "test.txt"
+    assert_equal "Hello World from Neovim!!", File.read("test.txt").strip
+  end
 end

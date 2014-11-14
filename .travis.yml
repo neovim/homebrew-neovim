@@ -1,0 +1,17 @@
+language: objective-c
+before_install:
+  - brew update
+  - brew --env
+  - brew config
+install:
+  - mkdir -p $(brew --repo)/Library/Taps/neovim
+  - ln -s $PWD $(brew --repo)/Library/Taps/neovim/homebrew-neovim
+  - brew tap --repair
+  - brew tap
+  - export PATH="$PWD/bin:${PATH}"
+script:
+  - brew head-audit neovim
+  - brew install neovim --HEAD --verbose
+  - brew test neovim
+matrix:
+  fast_finish: true
