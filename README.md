@@ -1,5 +1,6 @@
 homebrew-neovim
 ===============
+https://travis-ci.org/neovim/homebrew-neovim.svg?branch=master
 
 Homebrew formula for neovim.
 
