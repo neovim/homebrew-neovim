@@ -10,7 +10,7 @@ class Neovim < Formula
   depends_on "autoconf" => :build
 
   resource "libuv" do
-    url "https://github.com/joyent/libuv/archive/v0.11.28.tar.gz"
+    url "https://github.com/libuv/libuv/archive/v0.11.28.tar.gz"
     sha1 "3b70b65467ee693228b8b8385665a52690d74092"
   end
 
