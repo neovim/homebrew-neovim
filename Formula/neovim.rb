@@ -8,6 +8,8 @@ class Neovim < Formula
   depends_on "libtool" => :build
   depends_on "automake" => :build
   depends_on "autoconf" => :build
+  depends_on "pkg-config" => :build
+  depends_on "gettext" => :build
 
   resource "libuv" do
     url "https://github.com/libuv/libuv/archive/v0.11.28.tar.gz"
