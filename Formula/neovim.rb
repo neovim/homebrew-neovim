@@ -32,8 +32,8 @@ class Neovim < Formula
   end
 
   resource "libunibilium" do
-    url "https://github.com/neovim/unibilium/archive/neovim.tar.gz"
-    sha1 "5d3d4913dd267b14f81fc665e0fa20661d3cb817"
+    url "https://github.com/mauke/unibilium/archive/v1.1.1.tar.gz"
+    sha1 "582cbac75989d70e70953fa826cb5457cbfacc10"
   end
 
   resource "libtermkey" do
