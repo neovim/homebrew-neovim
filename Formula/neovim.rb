@@ -31,6 +31,21 @@ class Neovim < Formula
     sha1 "61a894fd5d61987bf7e7f9c3e0c5de16ba4b68c4"
   end
 
+  resource "libunibilium" do
+    url "https://github.com/neovim/unibilium/archive/neovim.tar.gz"
+    sha1 "5d3d4913dd267b14f81fc665e0fa20661d3cb817"
+  end
+
+  resource "libtermkey" do
+    url "https://github.com/neovim/libtermkey/archive/neovim.tar.gz"
+    sha1 "a309038a2297fe4905f03a8807723a9aa07c272a"
+  end
+
+  resource "libtickit" do
+    url "https://github.com/neovim/libtickit/archive/neovim.tar.gz"
+    sha1 "49e609de29c3bdc3b40d2ade76e69fde6e0d74bc"
+  end
+
   def install
     ENV["GIT_DIR"] = cached_download/".git" if build.head?
     ENV.deparallelize
