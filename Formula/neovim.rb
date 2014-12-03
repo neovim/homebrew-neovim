@@ -12,8 +12,8 @@ class Neovim < Formula
   depends_on "gettext" => :build
 
   resource "libuv" do
-    url "https://github.com/libuv/libuv/archive/v0.11.28.tar.gz"
-    sha1 "3b70b65467ee693228b8b8385665a52690d74092"
+    url "https://github.com/libuv/libuv/archive/v1.0.1.tar.gz"
+    sha1 "be4edcca18a518153b5e249a17621f2674d7654d"
   end
 
   resource "msgpack" do
