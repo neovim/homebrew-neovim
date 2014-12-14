@@ -43,7 +43,7 @@ class Neovim < Formula
 
   resource "libtickit" do
     url "https://github.com/neovim/libtickit/archive/neovim.tar.gz"
-    sha1 "08a2aa9ab4bacbeeafefac430691089d829fdb13"
+    sha1 "49e609de29c3bdc3b40d2ade76e69fde6e0d74bc"
   end
 
   def install
