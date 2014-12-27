@@ -1,5 +1,3 @@
-require "formula"
-
 class Neovim < Formula
   homepage "http://neovim.org"
   head "https://github.com/neovim/neovim.git"
