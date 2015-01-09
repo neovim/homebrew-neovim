@@ -30,18 +30,18 @@ class Neovim < Formula
   end
 
   resource "libunibilium" do
-    url "https://github.com/neovim/unibilium/archive/neovim.tar.gz"
-    sha1 "ab22e465150458a4ea91b72de997a35f25df1bcf"
+    url "https://github.com/mauke/unibilium/archive/520abbc8b26910e2580619f669b5cc2c4ef7f864.tar.gz"
+    sha1 "c546e5e8861380f5c109a256f25c93419e4076bf"
   end
 
   resource "libtermkey" do
-    url "https://github.com/neovim/libtermkey/archive/neovim.tar.gz"
-    sha1 "a309038a2297fe4905f03a8807723a9aa07c272a"
+    url "https://github.com/neovim/libtermkey/archive/7b3bdafdf589d08478f2493273d4d75636ecc183.tar.gz"
+    sha1 "28bfe54dfd9269910a132b51dee7725a2121578d"
   end
 
   resource "libtickit" do
-    url "https://github.com/neovim/libtickit/archive/neovim.tar.gz"
-    sha1 "08a2aa9ab4bacbeeafefac430691089d829fdb13"
+    url "https://github.com/neovim/libtickit/archive/0430ba2f43fdf1c31bca66def52a2537c581ade5.tar.gz"
+    sha1 "732b145a4dab06e6f1b40a352424f808730726bf"
   end
 
   def install
