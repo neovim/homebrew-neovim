@@ -40,8 +40,8 @@ class Neovim < Formula
   end
 
   resource "libtickit" do
-    url "https://github.com/neovim/libtickit/archive/0430ba2f43fdf1c31bca66def52a2537c581ade5.tar.gz"
-    sha1 "732b145a4dab06e6f1b40a352424f808730726bf"
+    url "https://github.com/neovim/libtickit/archive/33f4afb3891df05955429acbf5b406dfe87ec22b.tar.gz"
+    sha1 "3aab459b9fb3cd83e85ac2e08f05e5f162c8c9d2"
   end
 
   def install
