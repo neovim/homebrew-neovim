@@ -55,6 +55,14 @@ class Neovim < Formula
     system "make", "CMAKE_BUILD_TYPE=RelWithDebInfo", "CMAKE_EXTRA_FLAGS=\"-DCMAKE_INSTALL_PREFIX:PATH=#{prefix}\"", "install"
   end
 
+  def caveats; <<-EOS.undent
+      If you want support for Python plugins such as YouCompleteMe, you need
+      to install a Python module in addition to Neovim itself.
+
+      See :h nvim-python-quickstart for more information.
+    EOS
+  end
+
   test do
     (testpath/"test.txt").write("Hello World from Vim!!")
     system bin/"nvim", "-u", "NONE", "+s/Vim/Neovim/g", "+wq", "test.txt"
