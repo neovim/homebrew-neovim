@@ -11,8 +11,8 @@ class Neovim < Formula
   depends_on :python => :recommended if MacOS.version <= :snow_leopard
 
   resource "libuv" do
-    url "https://github.com/libuv/libuv/archive/v1.3.0.tar.gz"
-    sha1 "ff0346b8d642fe99a04e22a26cf8f94b5a01e6bb"
+    url "https://github.com/libuv/libuv/archive/v1.2.0.tar.gz"
+    sha1 "38d1ba349fcfc1b221140523ba3d7cf3ea38c20b"
   end
 
   resource "msgpack" do
