@@ -16,8 +16,8 @@ class Neovim < Formula
   end
 
   resource "msgpack" do
-    url "https://github.com/msgpack/msgpack-c/archive/ecf4b09acd29746829b6a02939db91dfdec635b4.tar.gz"
-    sha1 "c160ff99f20d9d0a25bea0a57f4452f1c9bde370"
+    url "https://github.com/msgpack/msgpack-c/archive/b4eba4ba090e8cd6d8332410e252296a62b7e56d.tar.gz"
+    sha1 "768e60e3936cd0d0e4f1d58ca86a78eeb895931b"
   end
 
   resource "luajit" do
