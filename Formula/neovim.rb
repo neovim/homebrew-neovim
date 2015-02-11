@@ -36,13 +36,8 @@ class Neovim < Formula
   end
 
   resource "libtermkey" do
-    url "https://github.com/neovim/libtermkey/archive/7b3bdafdf589d08478f2493273d4d75636ecc183.tar.gz"
-    sha1 "28bfe54dfd9269910a132b51dee7725a2121578d"
-  end
-
-  resource "libtickit" do
-    url "https://github.com/neovim/libtickit/archive/47eaaba606f0b2db9f41f3377ecdebba69d4464d.tar.gz"
-    sha1 "8398fb9f3656f70e3c74ae95a4eba7c6bf52165b"
+    url "https://github.com/neovim/libtermkey/archive/8c0cb7108cc63218ea19aa898968eede19e19603.tar.gz"
+    sha1 "54e8b6914dab10d4467d2a563f80053a99849fcb"
   end
 
   def install
