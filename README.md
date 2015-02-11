@@ -13,6 +13,23 @@ $ brew install --HEAD neovim
 
 ## Troubleshooting
 
+* Make sure you're using the right formula.  `brew info neovim` should have a
+  From line similar to this:
+
+  ```text
+  From: https://github.com/neovim/homebrew-neovim/blob/master/Formula/neovim.rb
+  ```
+
+  If your formula points elsewhere, then you need to retap the neovim formula.
+  Do so with the following sequence of commands:
+
+  ```text
+  brew uninstall neovim --force
+  brew prune
+  brew tap neovim/homebrew-neovim
+  brew tap --repair
+  brew install neovim --HEAD
+  ```
 * Run `brew update` — then try again.
 * Run `brew doctor` — the doctor diagnoses common issues.
 * Check that **Command Line Tools for Xcode (CLT)** and/or **Xcode** are up to
