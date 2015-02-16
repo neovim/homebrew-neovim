@@ -10,8 +10,8 @@ install:
   - brew tap
   - export PATH="$PWD/bin:${PATH}"
 script:
-  - brew head-audit neovim --strict
   - brew install neovim --HEAD --verbose
+  - brew head-audit neovim --strict
   - brew test neovim
 matrix:
   fast_finish: true
