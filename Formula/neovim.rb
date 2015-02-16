@@ -41,7 +41,6 @@ class Neovim < Formula
   end
 
   def install
-    ENV["GIT_DIR"] = cached_download/".git" if build.head?
     ENV.deparallelize
 
     resources.each do |r|
