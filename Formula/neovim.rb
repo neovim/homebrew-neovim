@@ -12,32 +12,37 @@ class Neovim < Formula
 
   resource "libuv" do
     url "https://github.com/libuv/libuv/archive/v1.2.0.tar.gz"
-    sha1 "38d1ba349fcfc1b221140523ba3d7cf3ea38c20b"
+    sha256 "bebf424bb239867bbf609abad09a256cae7808c9d5cb346b779acd4b97a56693"
   end
 
   resource "msgpack" do
     url "https://github.com/msgpack/msgpack-c/archive/f6d0cd9a4ba46f4341014a199e3d352fad76b215.tar.gz"
-    sha1 "112ef2e8c58b26ba958554e17df81b1dcd610e9a"
+    sha256 "988bb2bf86bb0f69816cbcbe2218285b94dbaa27e839f8b1ffdb0b934a7d726a"
   end
 
   resource "luajit" do
     url "http://luajit.org/download/LuaJIT-2.0.3.tar.gz"
-    sha1 "2db39e7d1264918c2266b0436c313fbd12da4ceb"
+    sha256 "55be6cb2d101ed38acca32c5b1f99ae345904b365b642203194c585d27bebd79"
   end
 
   resource "luarocks" do
     url "https://github.com/keplerproject/luarocks/archive/0587afbb5fe8ceb2f2eea16f486bd6183bf02f29.tar.gz"
-    sha1 "61a894fd5d61987bf7e7f9c3e0c5de16ba4b68c4"
+    sha256 "c8ad50938fed66beba74a73621d14121d4a40b796e01c45238de4cdcb47d5e0b"
   end
 
   resource "libunibilium" do
     url "https://github.com/mauke/unibilium/archive/bb979ff6f66a18663e15d086dec6276561b86ee0.tar.gz"
-    sha1 "32c07797f298e5bc722ce14b6b9a2cae68e3c018"
+    sha256 "bec06ea90128b46f28b91b8b52b861dede5f4ede0a92f05178b3c7bcec237dd1"
   end
 
   resource "libtermkey" do
     url "https://github.com/neovim/libtermkey/archive/8c0cb7108cc63218ea19aa898968eede19e19603.tar.gz"
-    sha1 "54e8b6914dab10d4467d2a563f80053a99849fcb"
+    sha256 "21846369081e6c9a0b615f4b3889c4cb809321c5ccc6e6c1640eb138f1590072"
+  end
+
+  resource "libvterm" do
+    url "https://github.com/neovim/libvterm/archive/dd92e5ba5b0907571df938ac7601b1641f05ed16.tar.gz"
+    sha256 "850780dfef9e576c06b0e31ea1356da17da2bb4fd9e065a23ac50c88db2b0630"
   end
 
   def install
