@@ -41,8 +41,8 @@ class Neovim < Formula
   end
 
   resource "libvterm" do
-    url "https://github.com/neovim/libvterm/archive/dd92e5ba5b0907571df938ac7601b1641f05ed16.tar.gz"
-    sha256 "850780dfef9e576c06b0e31ea1356da17da2bb4fd9e065a23ac50c88db2b0630"
+    url "https://github.com/neovim/libvterm/archive/1b745d29d45623aa8d22a7b9288c7b0e331c7088.tar.gz"
+    sha256 "3fc75908256c0d158d6c2a32d39f34e86bfd26364f5404b7d9c03bb70cdc3611"
   end
 
   def install
