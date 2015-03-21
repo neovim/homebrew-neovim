@@ -16,8 +16,8 @@ class Neovim < Formula
   end
 
   resource "msgpack" do
-    url "https://github.com/msgpack/msgpack-c/archive/f6d0cd9a4ba46f4341014a199e3d352fad76b215.tar.gz"
-    sha256 "988bb2bf86bb0f69816cbcbe2218285b94dbaa27e839f8b1ffdb0b934a7d726a"
+    url "https://github.com/msgpack/msgpack-c/archive/cpp-1.0.0.tar.gz"
+    sha256 "afda64ca445203bb7092372b822bae8b2539fdcebbfc3f753f393628c2bcfe7d"
   end
 
   resource "luajit" do
@@ -31,8 +31,8 @@ class Neovim < Formula
   end
 
   resource "libunibilium" do
-    url "https://github.com/mauke/unibilium/archive/bb979ff6f66a18663e15d086dec6276561b86ee0.tar.gz"
-    sha256 "bec06ea90128b46f28b91b8b52b861dede5f4ede0a92f05178b3c7bcec237dd1"
+    url "https://github.com/mauke/unibilium/archive/v1.1.2.tar.gz"
+    sha256 "bdf3750b9e6ecdb30ba42dd0ef041c34222051495ff420c8c76d391f11e149e3"
   end
 
   resource "libtermkey" do
