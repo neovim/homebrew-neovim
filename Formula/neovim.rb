@@ -45,6 +45,11 @@ class Neovim < Formula
     sha256 "3fc75908256c0d158d6c2a32d39f34e86bfd26364f5404b7d9c03bb70cdc3611"
   end
 
+  resource "jemalloc" do
+    url "https://github.com/jemalloc/jemalloc/archive/3.6.0.tar.gz"
+    sha256 "68175f729423305dc8573cb093025a8db525e1956583c7c5924416a9abaaacb6"
+  end
+
   def install
     ENV.deparallelize
 
