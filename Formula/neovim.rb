@@ -30,7 +30,7 @@ class Neovim < Formula
     sha256 "c8ad50938fed66beba74a73621d14121d4a40b796e01c45238de4cdcb47d5e0b"
   end
 
-  resource "libunibilium" do
+  resource "unibilium" do
     url "https://github.com/mauke/unibilium/archive/v1.1.2.tar.gz"
     sha256 "bdf3750b9e6ecdb30ba42dd0ef041c34222051495ff420c8c76d391f11e149e3"
   end
