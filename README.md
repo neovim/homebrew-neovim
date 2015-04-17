@@ -34,8 +34,12 @@ $ brew install --HEAD neovim
 * Run `brew doctor` — the doctor diagnoses common issues.
 * Check that **Command Line Tools for Xcode (CLT)** and/or **Xcode** are up to
   date by checking for updates in the App Store.
+  * If the build fails with `fatal error: '__debug' file not found`,
+    you have to install Xcode. This is due to a [bug in the Xcode CLT 6.3][clt-bug].
 * You can create a gist log with `brew gist-logs neovim`.
 * Use `--verbose` to get the verbose output, i.e. `brew install --HEAD --verbose neovim`.
 * Use `--debug` to be in the debug mode. In the debug mode, when failing, you
   can go into the interactive shell to check the building files before homebrew
   neutralizing them.
+
+[clt-bug]: https://openradar.appspot.com/radar?id=6405426379751424
