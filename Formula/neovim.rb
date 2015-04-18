@@ -52,6 +52,7 @@ class Neovim < Formula
 
   def install
     ENV.deparallelize
+    ENV["HOME"] = buildpath
 
     resources.each do |r|
       r.stage(buildpath/".deps/build/src/#{r.name}")
