@@ -58,7 +58,11 @@ class Neovim < Formula
       r.stage(buildpath/".deps/build/src/#{r.name}")
     end
 
-    system "make", "CMAKE_BUILD_TYPE=RelWithDebInfo", "CMAKE_EXTRA_FLAGS=\"-DCMAKE_INSTALL_PREFIX:PATH=#{prefix}\"", "install"
+    system "make",
+           "CMAKE_BUILD_TYPE=RelWithDebInfo",
+           "DEPS_CMAKE_FLAGS=-DUSE_BUNDLED_BUSTED=OFF",
+           "CMAKE_EXTRA_FLAGS=\"-DCMAKE_INSTALL_PREFIX:PATH=#{prefix}\"",
+           "install"
   end
 
   def caveats; <<-EOS.undent
