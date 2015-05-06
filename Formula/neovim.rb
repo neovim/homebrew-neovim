@@ -62,6 +62,7 @@ class Neovim < Formula
            "CMAKE_BUILD_TYPE=RelWithDebInfo",
            "DEPS_CMAKE_FLAGS=-DUSE_BUNDLED_BUSTED=OFF",
            "CMAKE_EXTRA_FLAGS=\"-DCMAKE_INSTALL_PREFIX:PATH=#{prefix}\"",
+           "VERBOSE=1",
            "install"
   end
 
