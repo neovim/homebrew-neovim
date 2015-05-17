@@ -21,8 +21,8 @@ class Neovim < Formula
   end
 
   resource "luajit" do
-    url "http://luajit.org/download/LuaJIT-2.0.3.tar.gz"
-    sha256 "55be6cb2d101ed38acca32c5b1f99ae345904b365b642203194c585d27bebd79"
+    url "http://luajit.org/download/LuaJIT-2.0.4.tar.gz"
+    sha256 "620fa4eb12375021bef6e4f237cbd2dd5d49e56beb414bee052c746beef1807d"
   end
 
   resource "luarocks" do
