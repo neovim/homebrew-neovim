@@ -1,5 +1,5 @@
 class Neovim < Formula
-  homepage "http://neovim.org"
+  homepage "http://neovim.io"
   head "https://github.com/neovim/neovim.git"
 
   depends_on "cmake" => :build
