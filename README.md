@@ -4,6 +4,17 @@ homebrew-neovim
 
 Homebrew formula for neovim.
 
+## Dependencies
+### Linux
+- [linuxbrew](https://github.com/Homebrew/linuxbrew)
+- unzip
+- libtool
+
+### Ubuntu
+```sh
+apt-get install --no-install-recommends libtool unzip
+```
+
 ## Usage
 
 ```bash
