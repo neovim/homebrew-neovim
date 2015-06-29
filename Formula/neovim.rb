@@ -1,4 +1,5 @@
 class Neovim < Formula
+  desc "Ambitious Vim-fork focused on extensibility and agility"
   homepage "http://neovim.io"
   head "https://github.com/neovim/neovim.git"
 

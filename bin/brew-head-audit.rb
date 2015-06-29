@@ -6,8 +6,9 @@
 require "cmd/audit"
 
 class FormulaAuditor
-    def audit_specs
-    end
+  def problems
+    @problems.reject { |p| p == "Head-only (no stable download)" }
+  end
 end
 
 Homebrew.audit
