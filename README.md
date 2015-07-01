@@ -1,20 +1,29 @@
 homebrew-neovim
 ===============
-[![Build Status](https://travis-ci.org/neovim/homebrew-neovim.svg?branch=master)](https://travis-ci.org/neovim/homebrew-neovim)
+[![Build Status](https://travis-ci.org/neovim/homebrew-neovim.svg?branch=master)][travis](https://travis-ci.org/neovim/homebrew-neovim)
 
 Homebrew formula for neovim.
 
 ## Usage
 
-```bash
+```
 $ brew tap neovim/neovim
 $ brew install --HEAD neovim
 ```
 
+To **upgrade** from a previous version:
+
+```text
+$ brew update
+$ brew reinstall --HEAD neovim
+```
+
+For instructions on how to install the Python modules, see [`:help nvim-python`][nvim-python]
+
 ## Troubleshooting
 
-* Make sure you're using the right formula.  `brew info neovim` should have a
-  From line similar to this:
+* Make sure you're using the right formula. `brew info neovim` should have a
+  `From` line similar to this:
 
   ```text
   From: https://github.com/neovim/homebrew-neovim/blob/master/Formula/neovim.rb
@@ -24,11 +33,11 @@ $ brew install --HEAD neovim
   Do so with the following sequence of commands:
 
   ```text
-  brew uninstall neovim --force
-  brew prune
-  brew tap neovim/homebrew-neovim
-  brew tap --repair
-  brew install neovim --HEAD
+  $ brew uninstall neovim --force
+  $ brew prune
+  $ brew tap neovim/homebrew-neovim
+  $ brew tap --repair
+  $ brew install neovim --HEAD
   ```
 * Run `brew update` — then try again.
 * Run `brew doctor` — the doctor diagnoses common issues.
@@ -43,3 +52,4 @@ $ brew install --HEAD neovim
   neutralizing them.
 
 [clt-bug]: https://openradar.appspot.com/radar?id=6405426379751424
+[nvim-python]: http://neovim.io/doc/user/nvim_python.html
