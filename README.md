@@ -50,6 +50,11 @@ For instructions on how to install the Python modules, see [`:help nvim-python`]
 * Use `--debug` to be in the debug mode. In the debug mode, when failing, you
   can go into the interactive shell to check the building files before homebrew
   neutralizing them.
+* If you encounter the error `CMAKE_USE_SYSTEM_CURL is ON but a curl is not found`,
+  then you're missing the dependency for cURL that allows downloads over TLS.
+  Refer to your operating system's section in [Linuxbrew Dependencies][linuxbrew-dependencies]
+  to fix this.
 
 [clt-bug]: https://openradar.appspot.com/radar?id=6405426379751424
 [nvim-python]: http://neovim.io/doc/user/nvim_python.html
+[linuxbrew-dependencies]: https://github.com/Homebrew/linuxbrew#dependencies
