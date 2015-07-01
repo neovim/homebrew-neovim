@@ -71,7 +71,8 @@ class Neovim < Formula
       If you want support for Python plugins such as YouCompleteMe, you need
       to install a Python module in addition to Neovim itself.
 
-      See :h nvim-python-quickstart for more information.
+      Execute `:help nvim-python` in nvim or see
+      http://neovim.io/doc/user/nvim_python.html for more information.
     EOS
   end
 
