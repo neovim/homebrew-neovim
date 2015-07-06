@@ -3,6 +3,8 @@ class Neovim < Formula
   homepage "http://neovim.io"
   head "https://github.com/neovim/neovim.git"
 
+  option "without-debug", "Don't build with debInfo."
+
   depends_on "cmake" => :build
   depends_on "libtool" => :build
   depends_on "automake" => :build
@@ -59,8 +61,10 @@ class Neovim < Formula
       r.stage(buildpath/".deps/build/src/#{r.name}")
     end
 
+    build_type = build.with?("debug") ? "RelWithDebInfo" : "Release"
+
     system "make",
-           "CMAKE_BUILD_TYPE=RelWithDebInfo",
+           "CMAKE_BUILD_TYPE=#{build_type}",
            "DEPS_CMAKE_FLAGS=-DUSE_BUNDLED_BUSTED=OFF",
            "CMAKE_EXTRA_FLAGS=\"-DCMAKE_INSTALL_PREFIX:PATH=#{prefix}\"",
            "VERBOSE=1",
