@@ -56,23 +56,40 @@ class Neovim < Formula
     ENV["HOME"] = buildpath
 
     resources.each do |r|
-      r.stage(buildpath/".deps/build/src/#{r.name}")
+      r.stage(buildpath/"deps-build/build/src/#{r.name}")
     end
 
-    system "make",
-           "CMAKE_BUILD_TYPE=RelWithDebInfo",
-           "DEPS_CMAKE_FLAGS=-DUSE_BUNDLED_BUSTED=OFF",
-           "CMAKE_EXTRA_FLAGS=\"-DCMAKE_INSTALL_PREFIX:PATH=#{prefix}\"",
-           "VERBOSE=1",
-           "install"
+    cd "deps-build" do
+      ohai "Building third-party dependencies."
+      system "cmake", "../third-party", *std_cmake_args, "-DUSE_BUNDLED_BUSTED=OFF"
+      system "make", "VERBOSE=1"
+    end
+
+    mkdir "build" do
+      ohai "Building Neovim."
+      system "cmake", "..", *std_cmake_args,
+             "-DDEPS_PREFIX=../deps-build/usr",
+             "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+      system "make", "VERBOSE=1", "install"
+    end
   end
 
   def caveats; <<-EOS.undent
+      The Neovim executable is called 'nvim'. To use your existing Vim
+      configuration:
+          ln -s ~/.vimrc ~/.nvimrc
+          ln -s ~/.vim ~/.nvim
+      See ':help nvim' for more information on Neovim.
+
+      When upgrading Neovim, check the following page for breaking changes:
+          https://github.com/neovim/neovim/wiki/Following-HEAD
+
       If you want support for Python plugins such as YouCompleteMe, you need
       to install a Python module in addition to Neovim itself.
 
-      Execute `:help nvim-python` in nvim or see
-      http://neovim.io/doc/user/nvim_python.html for more information.
+      Execute ':help nvim-python' in nvim or see the following page for more
+      information:
+          http://neovim.io/doc/user/nvim_python.html
     EOS
   end
 
