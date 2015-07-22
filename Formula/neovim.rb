@@ -56,15 +56,22 @@ class Neovim < Formula
     ENV["HOME"] = buildpath
 
     resources.each do |r|
-      r.stage(buildpath/".deps/build/src/#{r.name}")
+      r.stage(buildpath/"deps-build/build/src/#{r.name}")
     end
 
-    system "make",
-           "CMAKE_BUILD_TYPE=RelWithDebInfo",
-           "DEPS_CMAKE_FLAGS=-DUSE_BUNDLED_BUSTED=OFF",
-           "CMAKE_EXTRA_FLAGS=\"-DCMAKE_INSTALL_PREFIX:PATH=#{prefix}\"",
-           "VERBOSE=1",
-           "install"
+    cd "deps-build" do
+      ohai "Building third-party dependencies."
+      system "cmake", "../third-party", *std_cmake_args, "-DUSE_BUNDLED_BUSTED=OFF"
+      system "make", "VERBOSE=1"
+    end
+
+    mkdir "build" do
+      ohai "Building Neovim."
+      system "cmake", "..", *std_cmake_args,
+             "-DDEPS_PREFIX=../deps-build/usr",
+             "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+      system "make", "VERBOSE=1", "install"
+    end
   end
 
   def caveats; <<-EOS.undent
