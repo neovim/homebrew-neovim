@@ -67,10 +67,9 @@ class Neovim < Formula
 
     mkdir "build" do
       ohai "Building Neovim."
-      system "cmake", "..",
-             "-DDEPS_PREFIX=../deps-build/usr",
-             "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-             *std_cmake_args
+      cmake_args = std_cmake_args + ["-DDEPS_PREFIX=../deps-build/usr",
+                                     "-DCMAKE_BUILD_TYPE=RelWithDebInfo"]
+      system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1", "install"
     end
   end
