@@ -12,8 +12,8 @@ class Neovim < Formula
   depends_on :python => :recommended if MacOS.version <= :snow_leopard
 
   resource "libuv" do
-    url "https://github.com/libuv/libuv/archive/v1.4.2.tar.gz"
-    sha256 "b9e424f69db0d1c3035c5f871cd9d7a3f4bace0a4db3e974bdbfa0cf95f6b741"
+    url "https://github.com/libuv/libuv/archive/v1.7.2.tar.gz"
+    sha256 "2f27cc888192e4ee6ada8477f9897bea648de5b04207c984271efa91295c0fc8"
   end
 
   resource "msgpack" do
@@ -95,7 +95,7 @@ class Neovim < Formula
 
   test do
     (testpath/"test.txt").write("Hello World from Vim!!")
-    system bin/"nvim", "-u", "NONE", "+s/Vim/Neovim/g", "+wq", "test.txt"
+    system bin/"nvim", "--headless", "-i", "NONE", "-u", "NONE", "+s/Vim/Neovim/g", "+wq", "test.txt"
     assert_equal "Hello World from Neovim!!", File.read("test.txt").strip
   end
 end
