@@ -61,14 +61,15 @@ class Neovim < Formula
 
     cd "deps-build" do
       ohai "Building third-party dependencies."
-      system "cmake", "../third-party", "-DUSE_BUNDLED_BUSTED=OFF", *std_cmake_args
+      system "cmake", "../third-party", "-DUSE_BUNDLED_BUSTED=OFF",
+             "-DUSE_EXISTING_SRC_DIR=ON", *std_cmake_args
       system "make", "VERBOSE=1"
     end
 
     mkdir "build" do
       ohai "Building Neovim."
       cmake_args = std_cmake_args + ["-DDEPS_PREFIX=../deps-build/usr",
-                                     "-DCMAKE_BUILD_TYPE=RelWithDebInfo"]
+                                     "-DCMAKE_BUILD_TYPE=RelWithDebInfo",]
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1", "install"
     end
