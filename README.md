@@ -54,6 +54,7 @@ For instructions on how to install the Python modules, see [`:help nvim-python`]
   then you're missing the dependency for cURL that allows downloads over TLS.
   Refer to your operating system's section in [Linuxbrew Dependencies][linuxbrew-dependencies]
   to fix this.
+* If you are on a fresh install of ubuntu that is somewhat minimial, you will need to make sure you have ``python-setuptools`` and ``unzip`` installed via apt.
 
 [clt-bug]: https://openradar.appspot.com/radar?id=6405426379751424
 [nvim-python]: http://neovim.io/doc/user/nvim_python.html
