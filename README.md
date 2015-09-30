@@ -45,6 +45,8 @@ For instructions on how to install the Python modules, see [`:help nvim-python`]
   date by checking for updates in the App Store.
   * If the build fails with `fatal error: '__debug' file not found`,
     you have to install Xcode. This is due to a [bug in the Xcode CLT 6.3][clt-bug].
+  * If the build fails with `ld: library not found for -lgcc_s`, make sure
+    you have the same version of Xcode and Xcode CLT installed.
 * You can create a gist log with `brew gist-logs neovim`.
 * Use `--verbose` to get the verbose output, i.e. `brew install --HEAD --verbose neovim`.
 * Use `--debug` to be in the debug mode. In the debug mode, when failing, you
