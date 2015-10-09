@@ -39,6 +39,11 @@ For instructions on how to install the Python modules, see [`:help nvim-python`]
   $ brew tap --repair
   $ brew install neovim --HEAD
   ```
+* If you encounter the error `Failed to update tap: neovim/neovim`, try:
+  ```text
+  $ brew untap neovim/neovim
+  $ brew tap neovim/neovim
+  ```
 * Run `brew update` — then try again.
 * Run `brew doctor` — the doctor diagnoses common issues.
 * Check that **Command Line Tools for Xcode (CLT)** and/or **Xcode** are up to
