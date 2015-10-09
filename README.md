@@ -40,6 +40,7 @@ For instructions on how to install the Python modules, see [`:help nvim-python`]
   $ brew install neovim --HEAD
   ```
 * If you encounter the error `Failed to update tap: neovim/neovim`, try:
+
   ```text
   $ brew untap neovim/neovim
   $ brew tap neovim/neovim
