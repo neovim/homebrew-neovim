@@ -7,7 +7,7 @@ Homebrew formula for neovim.
 ## Usage
 
 ```text
-$ brew tap neovim/neovim
+$ brew tap neovim/homebrew-neovim
 $ brew install --HEAD neovim
 ```
 
@@ -43,7 +43,7 @@ For instructions on how to install the Python modules, see [`:help nvim-python`]
 
   ```text
   $ brew untap neovim/neovim
-  $ brew tap neovim/neovim
+  $ brew tap neovim/homebrew-neovim
   ```
 * Run `brew update` — then try again.
 * Run `brew doctor` — the doctor diagnoses common issues.
