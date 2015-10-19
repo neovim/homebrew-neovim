@@ -7,7 +7,7 @@ Homebrew formula for neovim.
 ## Usage
 
 ```text
-$ brew tap neovim/neovim
+$ brew tap neovim/homebrew-neovim
 $ brew install --HEAD neovim
 ```
 
