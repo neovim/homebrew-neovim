@@ -76,21 +76,15 @@ class Neovim < Formula
   end
 
   def caveats; <<-EOS.undent
-      The Neovim executable is called 'nvim'. To use your existing Vim
-      configuration:
-          ln -s ~/.vimrc ~/.config/nvim/init.vim
-          ln -s ~/.vim ~/.config/nvim
-      See ':help nvim' for more information on Neovim.
+      The Neovim executable is called 'nvim'. If you are already familiar
+      with Vim, see ':help nvim-from-vim' to get started.
 
       When upgrading Neovim, check the following page for breaking changes:
           https://github.com/neovim/neovim/wiki/Following-HEAD
 
       If you want support for Python plugins such as YouCompleteMe, you need
       to install a Python module in addition to Neovim itself.
-
-      Execute ':help nvim-python' in nvim or see the following page for more
-      information:
-          http://neovim.io/doc/user/nvim_python.html
+      See ':help nvim-python' for more information.
     EOS
   end
 
