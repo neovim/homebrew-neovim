@@ -78,8 +78,8 @@ class Neovim < Formula
   def caveats; <<-EOS.undent
       The Neovim executable is called 'nvim'. To use your existing Vim
       configuration:
-          ln -s ~/.vimrc ~/.config/nvim/init.vim
           ln -s ~/.vim ~/.config/nvim
+          ln -s ~/.vimrc ~/.config/nvim/init.vim
       See ':help nvim' for more information on Neovim.
 
       When upgrading Neovim, check the following page for breaking changes:
