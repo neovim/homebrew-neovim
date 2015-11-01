@@ -6,28 +6,34 @@ Homebrew formula for neovim.
 
 ## Usage
 
-```text
-$ brew tap neovim/neovim
-$ brew install --HEAD neovim
-```
+To install the latest release:
+
+    $ brew tap neovim/neovim
+    $ brew install neovim
 
 To **upgrade** from a previous version:
 
-```text
-$ brew update
-$ brew reinstall --HEAD neovim
-```
+    $ brew update
+    $ brew upgrade neovim
 
 For instructions on how to install the Python modules, see [`:help nvim-python`][nvim-python].
+
+If you instead want to install a developer version of Neovim based on the current GitHub revision, use:
+
+    $ brew tap neovim/neovim
+    $ brew install --HEAD neovim
+
+To upgrade:
+
+    $ brew update
+    $ brew reinstall --HEAD neovim
 
 ## Troubleshooting
 
 * Make sure you're using the right formula. `brew info neovim` should have a
   `From` line similar to this:
 
-  ```text
-  From: https://github.com/neovim/homebrew-neovim/blob/master/Formula/neovim.rb
-  ```
+      From: https://github.com/neovim/homebrew-neovim/blob/master/Formula/neovim.rb
 
   If your formula points elsewhere, then you need to retap the neovim formula.
   Do so with the following sequence of commands:
@@ -35,7 +41,7 @@ For instructions on how to install the Python modules, see [`:help nvim-python`]
   ```text
   $ brew uninstall neovim --force
   $ brew prune
-  $ brew tap neovim/homebrew-neovim
+  $ brew tap neovim/neovim
   $ brew tap --repair
   $ brew install neovim --HEAD
   ```

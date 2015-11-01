@@ -1,15 +1,19 @@
 language: objective-c
+env:
+  matrix:
+    - FORMULA_VERSION=
+    - FORMULA_VERSION=--HEAD
 before_install:
   - brew update
   - brew --env
   - brew config
 install:
   - mkdir -p $(brew --repo)/Library/Taps/neovim
-  - ln -s $PWD $(brew --repo)/Library/Taps/neovim/homebrew-neovim
-  - export PATH="$PWD/bin:${PATH}"
+  - ln -s $TRAVIS_BUILD_DIR $(brew --repo)/Library/Taps/neovim/homebrew-neovim
 script:
-  - brew install neovim --HEAD --verbose
-  - brew head-audit neovim --strict
+  - brew install neovim $FORMULA_VERSION --verbose
+  - brew audit neovim --strict
   - brew test neovim
+  - nvim --version
 matrix:
   fast_finish: true
