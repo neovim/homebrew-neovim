@@ -59,6 +59,8 @@ To upgrade:
     you have to install Xcode. This is due to a [bug in the Xcode CLT 6.3][clt-bug].
   * If the build fails with `ld: library not found for -lgcc_s`, make sure
     you have the same version of Xcode and Xcode CLT installed.
+* Check the [Homebrew Troubleshooting][brew-trouble] page.  In particular, the
+  [Check for common issues][brew-common] section.
 * You can create a gist log with `brew gist-logs neovim`.
 * Use `--verbose` to get the verbose output, i.e. `brew install --HEAD --verbose neovim`.
 * Use `--debug` to be in the debug mode. In the debug mode, when failing, you
@@ -69,6 +71,8 @@ To upgrade:
   Refer to your operating system's section in [Linuxbrew Dependencies][linuxbrew-dependencies]
   to fix this.
 
+[brew-common]: https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Troubleshooting.md#check-for-common-issues
+[brew-trouble]: https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Troubleshooting.md
 [clt-bug]: https://openradar.appspot.com/radar?id=6405426379751424
 [nvim-python]: http://neovim.io/doc/user/nvim_python.html
 [linuxbrew-dependencies]: https://github.com/Homebrew/linuxbrew#dependencies
