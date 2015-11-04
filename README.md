@@ -8,8 +8,7 @@ Homebrew formula for neovim.
 
 To install the latest release:
 
-    $ brew tap neovim/neovim
-    $ brew install neovim
+    $ brew install neovim/neovim/neovim
 
 To **upgrade** from a previous version:
 
