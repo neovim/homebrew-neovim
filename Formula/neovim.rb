@@ -22,11 +22,6 @@ class Neovim < Formula
       sha256 "623af1099515e673abfd3cae5f2fa808a09ca55dda1c65a7b5c9424eb304ead8"
     end
 
-    resource "libtermkey" do
-      url "http://www.leonerd.org.uk/code/libtermkey/libtermkey-0.18.tar.gz"
-      sha256 "239746de41c845af52bb3c14055558f743292dd6c24ac26c2d6567a5a6093926"
-    end
-
     resource "libvterm" do
       url "https://github.com/neovim/libvterm/archive/1b745d29d45623aa8d22a7b9288c7b0e331c7088.tar.gz"
       sha256 "3fc75908256c0d158d6c2a32d39f34e86bfd26364f5404b7d9c03bb70cdc3611"
@@ -57,11 +52,6 @@ class Neovim < Formula
       sha256 "623af1099515e673abfd3cae5f2fa808a09ca55dda1c65a7b5c9424eb304ead8"
     end
 
-    resource "libtermkey" do
-      url "http://www.leonerd.org.uk/code/libtermkey/libtermkey-0.18.tar.gz"
-      sha256 "239746de41c845af52bb3c14055558f743292dd6c24ac26c2d6567a5a6093926"
-    end
-
     resource "libvterm" do
       url "https://github.com/neovim/libvterm/archive/1b745d29d45623aa8d22a7b9288c7b0e331c7088.tar.gz"
       sha256 "3fc75908256c0d158d6c2a32d39f34e86bfd26364f5404b7d9c03bb70cdc3611"
@@ -81,6 +71,7 @@ class Neovim < Formula
   depends_on "gettext" => :build
   depends_on "libuv"
   depends_on "msgpack"
+  depends_on "libtermkey"
   depends_on :python => :recommended if MacOS.version <= :snow_leopard
 
   def install
@@ -96,6 +87,7 @@ class Neovim < Formula
       system "cmake", "../third-party", "-DUSE_BUNDLED_BUSTED=OFF",
              "-DUSE_BUNDLED_LIBUV=OFF",
              "-DUSE_BUNDLED_MSGPACK=OFF",
+             "-DUSE_BUNDLED_LIBTERMKEY=OFF",
              "-DUSE_EXISTING_SRC_DIR=ON", *std_cmake_args
       system "make", "VERBOSE=1"
     end
