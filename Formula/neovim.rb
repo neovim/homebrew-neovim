@@ -80,7 +80,7 @@ class Neovim < Formula
       ohai "Building Neovim."
       build_type = build.head? ? "Dev" : "RelWithDebInfo"
       cmake_args = std_cmake_args + ["-DDEPS_PREFIX=../deps-build/usr",
-                                     "-DCMAKE_BUILD_TYPE=#{build_type}",]
+                                     "-DCMAKE_BUILD_TYPE=#{build_type}"]
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1", "install"
     end
