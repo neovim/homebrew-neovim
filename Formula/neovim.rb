@@ -17,11 +17,6 @@ class Neovim < Formula
       sha256 "cae709111c5701235770047dfd7169f66b82ae1c7b9b79207f9df0afb722bfd9"
     end
 
-    resource "unibilium" do
-      url "https://github.com/mauke/unibilium/archive/v1.2.0.tar.gz"
-      sha256 "623af1099515e673abfd3cae5f2fa808a09ca55dda1c65a7b5c9424eb304ead8"
-    end
-
     resource "libvterm" do
       url "https://github.com/neovim/libvterm/archive/1b745d29d45623aa8d22a7b9288c7b0e331c7088.tar.gz"
       sha256 "3fc75908256c0d158d6c2a32d39f34e86bfd26364f5404b7d9c03bb70cdc3611"
@@ -47,11 +42,6 @@ class Neovim < Formula
       sha256 "cae709111c5701235770047dfd7169f66b82ae1c7b9b79207f9df0afb722bfd9"
     end
 
-    resource "unibilium" do
-      url "https://github.com/mauke/unibilium/archive/v1.2.0.tar.gz"
-      sha256 "623af1099515e673abfd3cae5f2fa808a09ca55dda1c65a7b5c9424eb304ead8"
-    end
-
     resource "libvterm" do
       url "https://github.com/neovim/libvterm/archive/1b745d29d45623aa8d22a7b9288c7b0e331c7088.tar.gz"
       sha256 "3fc75908256c0d158d6c2a32d39f34e86bfd26364f5404b7d9c03bb70cdc3611"
@@ -72,6 +62,7 @@ class Neovim < Formula
   depends_on "libuv"
   depends_on "msgpack"
   depends_on "libtermkey"
+  depends_on "unibilium"
   depends_on :python => :recommended if MacOS.version <= :snow_leopard
 
   def install
@@ -88,6 +79,7 @@ class Neovim < Formula
              "-DUSE_BUNDLED_LIBUV=OFF",
              "-DUSE_BUNDLED_MSGPACK=OFF",
              "-DUSE_BUNDLED_LIBTERMKEY=OFF",
+             "-DUSE_BUNDLED_UNIBILIUM=OFF",
              "-DUSE_EXISTING_SRC_DIR=ON", *std_cmake_args
       system "make", "VERBOSE=1"
     end
