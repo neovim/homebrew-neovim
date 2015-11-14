@@ -7,11 +7,6 @@ class Neovim < Formula
     sha256 "e8659558103b8f5a65aac84007a12e3581b32736321778028017fd07365cfff8"
 
     # Third-party dependencies for latest release.
-    resource "libuv" do
-      url "https://github.com/libuv/libuv/archive/v1.7.3.tar.gz"
-      sha256 "db5d46318e18330c696d954747036e1be8e2346411d4f30236d7e2f499f0cfab"
-    end
-
     resource "msgpack" do
       url "https://github.com/msgpack/msgpack-c/archive/cpp-1.0.0.tar.gz"
       sha256 "afda64ca445203bb7092372b822bae8b2539fdcebbfc3f753f393628c2bcfe7d"
@@ -52,11 +47,6 @@ class Neovim < Formula
     url "https://github.com/neovim/neovim.git"
 
     # Third-party dependencies for latest repo revision.
-    resource "libuv" do
-      url "https://github.com/libuv/libuv/archive/v1.7.3.tar.gz"
-      sha256 "db5d46318e18330c696d954747036e1be8e2346411d4f30236d7e2f499f0cfab"
-    end
-
     resource "msgpack" do
       url "https://github.com/msgpack/msgpack-c/archive/cpp-1.0.0.tar.gz"
       sha256 "afda64ca445203bb7092372b822bae8b2539fdcebbfc3f753f393628c2bcfe7d"
@@ -99,6 +89,7 @@ class Neovim < Formula
   depends_on "autoconf" => :build
   depends_on "pkg-config" => :build
   depends_on "gettext" => :build
+  depends_on "libuv"
   depends_on :python => :recommended if MacOS.version <= :snow_leopard
 
   def install
@@ -112,6 +103,7 @@ class Neovim < Formula
     cd "deps-build" do
       ohai "Building third-party dependencies."
       system "cmake", "../third-party", "-DUSE_BUNDLED_BUSTED=OFF",
+             "-DUSE_BUNDLED_LIBUV=OFF",
              "-DUSE_EXISTING_SRC_DIR=ON", *std_cmake_args
       system "make", "VERBOSE=1"
     end
