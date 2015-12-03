@@ -27,6 +27,31 @@ To upgrade:
     $ brew update
     $ brew reinstall --HEAD neovim
 
+## Filing an Issue
+
+If you run into problems, make sure to follow the
+[Troubleshooting](#troubleshooting) section below before filing an issue.  If
+you still have problems:
+
+* *Please search the issue tracker for your problem.*  GitHub does not show
+  closed issues by default, but it will search them.  Many issues others have
+  seen before and have been resolved already.  It's really a burden on the
+  development team to come by and point out already solved issues to you.
+
+* Please make sure to include the link to the result of your
+  `brew gist-logs neovim` command.  We simply cannot debug issues without
+  detailed information about the failure and `gist-logs` helps provide that.
+
+* It's also helpful to capture the output of a verbose version of the install
+  command you used.  Simply add the `-v` option to the command line and try
+  again.  For example, `brew install neovim/neovim/neovim` would become `brew
+  install -v neovim/neovim/neovim`.  Paste the result of this in your ticket,
+  and make sure to wrap it with a text fence so it renders correctly:
+
+      ```text
+      # output goes here
+      ```
+
 ## Troubleshooting
 
 * Make sure you're using the right formula. `brew info neovim` should have a
