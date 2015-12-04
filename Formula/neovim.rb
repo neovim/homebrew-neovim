@@ -121,6 +121,11 @@ class Neovim < Formula
       build_type = build.head? ? "Dev" : "RelWithDebInfo"
       cmake_args = std_cmake_args + ["-DDEPS_PREFIX=../deps-build/usr",
                                      "-DCMAKE_BUILD_TYPE=#{build_type}"]
+      if OS.mac?
+        cmake_args += ["-DIconv_INCLUDE_DIRS:PATH=/usr/include",
+                       "-DIconv_LIBRARIES:PATH=/usr/lib/libiconv.dylib"]
+      end
+
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1", "install"
     end
