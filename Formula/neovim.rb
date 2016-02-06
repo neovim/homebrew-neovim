@@ -18,7 +18,7 @@ class Neovim < Formula
     end
 
     resource "luajit" do
-      url "http://luajit.org/download/LuaJIT-2.0.4.tar.gz"
+      url "https://github.com/neovim/deps/raw/master/opt/LuaJIT-2.0.4.tar.gz"
       sha256 "620fa4eb12375021bef6e4f237cbd2dd5d49e56beb414bee052c746beef1807d"
     end
 
@@ -63,7 +63,7 @@ class Neovim < Formula
     end
 
     resource "luajit" do
-      url "http://luajit.org/download/LuaJIT-2.0.4.tar.gz"
+      url "https://github.com/neovim/deps/raw/master/opt/LuaJIT-2.0.4.tar.gz"
       sha256 "620fa4eb12375021bef6e4f237cbd2dd5d49e56beb414bee052c746beef1807d"
     end
 
