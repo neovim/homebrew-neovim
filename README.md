@@ -22,10 +22,15 @@ If you instead want to install a developer version of Neovim based on the curren
     $ brew tap neovim/neovim
     $ brew install --HEAD neovim
 
+If you want to build with `BUILD_TYPE=release` and disable logging to `~/.nvimlog`:
+
+    $ brew install --HEAD --with-release neovim
+
 To upgrade:
 
     $ brew update
     $ brew reinstall --HEAD neovim
+
 
 ## Filing an Issue
 
