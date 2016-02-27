@@ -8,8 +8,8 @@ class Neovim < Formula
 
     # Third-party dependencies for latest release.
     resource "libuv" do
-      url "https://github.com/libuv/libuv/archive/v1.7.3.tar.gz"
-      sha256 "db5d46318e18330c696d954747036e1be8e2346411d4f30236d7e2f499f0cfab"
+      url "https://github.com/libuv/libuv/archive/v1.8.0.tar.gz"
+      sha256 "906e1a5c673c95cb261adeacdb7308a65b4a8f7c9c50d85f3021364951fa9cde"
     end
 
     resource "msgpack" do
@@ -53,8 +53,8 @@ class Neovim < Formula
 
     # Third-party dependencies for latest repo revision.
     resource "libuv" do
-      url "https://github.com/libuv/libuv/archive/v1.7.3.tar.gz"
-      sha256 "db5d46318e18330c696d954747036e1be8e2346411d4f30236d7e2f499f0cfab"
+      url "https://github.com/libuv/libuv/archive/v1.8.0.tar.gz"
+      sha256 "906e1a5c673c95cb261adeacdb7308a65b4a8f7c9c50d85f3021364951fa9cde"
     end
 
     resource "msgpack" do
