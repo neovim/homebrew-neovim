@@ -2,6 +2,8 @@ class Neovim < Formula
   desc "Ambitious Vim-fork focused on extensibility and agility"
   homepage "https://neovim.io"
 
+  option "with-release", "Compile in release mode"
+
   stable do
     url "https://github.com/neovim/neovim/archive/v0.1.2.tar.gz"
     sha256 "549881465eff82454660ae92d857d6ffa22383d45c94c46f3753fd1b0e699247"
@@ -118,7 +120,13 @@ class Neovim < Formula
 
     mkdir "build" do
       ohai "Building Neovim."
-      build_type = build.head? ? "Dev" : "RelWithDebInfo"
+
+      build_type =
+        if build.with?("release")
+          "Release"
+        else
+          build.head? ? "Dev" : "RelWithDebInfo"
+        end
       cmake_args = std_cmake_args + ["-DDEPS_PREFIX=../deps-build/usr",
                                      "-DCMAKE_BUILD_TYPE=#{build_type}"]
       unless build.head?
