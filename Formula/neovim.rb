@@ -2,8 +2,6 @@ class Neovim < Formula
   desc "Ambitious Vim-fork focused on extensibility and agility"
   homepage "https://neovim.io"
 
-  option "with-release", "Compile in release mode"
-
   stable do
     url "https://github.com/neovim/neovim/archive/v0.1.2.tar.gz"
     sha256 "549881465eff82454660ae92d857d6ffa22383d45c94c46f3753fd1b0e699247"
@@ -95,6 +93,8 @@ class Neovim < Formula
     end
   end
 
+  option "with-release", "Compile in release mode"
+
   depends_on "cmake" => :build
   depends_on "libtool" => :build
   depends_on "automake" => :build
@@ -129,11 +129,11 @@ class Neovim < Formula
         end
       cmake_args = std_cmake_args + ["-DDEPS_PREFIX=../deps-build/usr",
                                      "-DCMAKE_BUILD_TYPE=#{build_type}"]
-      unless build.head?
-        cmake_args += ["-DCMAKE_C_FLAGS_RELWITHDEBINFO='-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1'"]
-      end
-
       if OS.mac?
+        unless build.head?
+          cmake_args += ["-DCMAKE_C_FLAGS_#{build_type.upcase}='-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1'"]
+        end
+
         cmake_args += ["-DIconv_INCLUDE_DIRS:PATH=/usr/include",
                        "-DIconv_LIBRARIES:PATH=/usr/lib/libiconv.dylib"]
       end
