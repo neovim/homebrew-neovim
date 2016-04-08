@@ -5,8 +5,8 @@ class Neovim < Formula
   option "with-release", "Compile in release mode"
 
   stable do
-    url "https://github.com/neovim/neovim/archive/v0.1.2.tar.gz"
-    sha256 "549881465eff82454660ae92d857d6ffa22383d45c94c46f3753fd1b0e699247"
+    url "https://github.com/neovim/neovim/archive/v0.1.3.tar.gz"
+    sha256 "7a86892d941b8829537ad46864b9a363d009ba56aeefdef2ee15ffa3eee5f92b"
 
     # Third-party dependencies for latest release.
     resource "libuv" do
