@@ -114,7 +114,8 @@ class Neovim < Formula
     cd "deps-build" do
       ohai "Building third-party dependencies."
       system "cmake", "../third-party", "-DUSE_BUNDLED_BUSTED=OFF",
-             "-DUSE_EXISTING_SRC_DIR=ON", *std_cmake_args
+             "-DUSE_BUNDLED_LUV=OFF", "-DUSE_EXISTING_SRC_DIR=ON",
+             *std_cmake_args
       system "make", "VERBOSE=1"
     end
 
