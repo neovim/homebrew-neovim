@@ -100,7 +100,7 @@ class Neovim < Formula
   depends_on "automake" => :build
   depends_on "autoconf" => :build
   depends_on "pkg-config" => :build
-  depends_on "gettext" => :build
+  depends_on "gettext"
   depends_on :python => :recommended if MacOS.version <= :snow_leopard
 
   def install
