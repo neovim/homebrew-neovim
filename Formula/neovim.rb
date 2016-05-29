@@ -33,8 +33,8 @@ class Neovim < Formula
     end
 
     resource "libtermkey" do
-      url "http://www.leonerd.org.uk/code/libtermkey/libtermkey-0.18.tar.gz"
-      sha256 "239746de41c845af52bb3c14055558f743292dd6c24ac26c2d6567a5a6093926"
+      url "https://github.com/neovim/libtermkey/archive/416adba8c000bd2a70efc881283249d03a56553b.tar.gz"
+      sha256 "29cb598c9afc0d306a406df4a9c9aceeb5f6a58dfe690dccc7032834d6844f86"
     end
 
     resource "libvterm" do
@@ -83,8 +83,8 @@ class Neovim < Formula
     end
 
     resource "libtermkey" do
-      url "http://www.leonerd.org.uk/code/libtermkey/libtermkey-0.18.tar.gz"
-      sha256 "239746de41c845af52bb3c14055558f743292dd6c24ac26c2d6567a5a6093926"
+      url "https://github.com/neovim/libtermkey/archive/416adba8c000bd2a70efc881283249d03a56553b.tar.gz"
+      sha256 "29cb598c9afc0d306a406df4a9c9aceeb5f6a58dfe690dccc7032834d6844f86"
     end
 
     resource "libvterm" do
