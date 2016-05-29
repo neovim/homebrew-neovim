@@ -57,6 +57,11 @@ class Neovim < Formula
       sha256 "906e1a5c673c95cb261adeacdb7308a65b4a8f7c9c50d85f3021364951fa9cde"
     end
 
+    resource "luv" do
+      url "https://github.com/luvit/luv/archive/146f1ce4c08c3b67f604c9ee1e124b1cf5c15cf3.tar.gz"
+      sha256 "3d537f8eb9fa5adb146a083eae22af886aee324ec268e2aa0fa75f2f1c52ca7a"
+    end
+
     resource "msgpack" do
       url "https://github.com/msgpack/msgpack-c/archive/cpp-1.0.0.tar.gz"
       sha256 "afda64ca445203bb7092372b822bae8b2539fdcebbfc3f753f393628c2bcfe7d"
