@@ -15,7 +15,7 @@ To **upgrade** from a previous version:
     $ brew update
     $ brew upgrade neovim
 
-For instructions on how to install the Python modules, see [`:help nvim-python`][nvim-python].
+For instructions on how to install the Python modules, see [`:help provider-python`][provider-python].
 
 If you instead want to install a developer version of Neovim based on the current GitHub revision, use:
 
@@ -103,5 +103,5 @@ you still have problems:
 [brew-common]: https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Troubleshooting.md#check-for-common-issues
 [brew-trouble]: https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Troubleshooting.md
 [clt-bug]: https://openradar.appspot.com/radar?id=6405426379751424
-[nvim-python]: http://neovim.io/doc/user/nvim_python.html
+[provider-python]: http://neovim.io/doc/user/provider.html
 [linuxbrew-dependencies]: https://github.com/Homebrew/linuxbrew#dependencies
