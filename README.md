@@ -4,9 +4,9 @@ homebrew-neovim
 
 Homebrew formula for neovim.
 
-## Usage
+## Install (stable)
 
-To install the latest release:
+To install the latest stable release:
 
     $ brew install neovim/neovim/neovim
 
@@ -15,14 +15,16 @@ To **upgrade** from a previous version:
     $ brew update
     $ brew upgrade neovim
 
-For instructions on how to install the Python modules, see [`:help provider-python`][provider-python].
+To use Python plugins, see [`:help provider-python`][provider-python].
 
-If you instead want to install a developer version of Neovim based on the current GitHub revision, use:
+## Install (unstable)
+
+To install the latest "developer version" pulled from the HEAD revision:
 
     $ brew tap neovim/neovim
     $ brew install --HEAD neovim
 
-If you want to build with `BUILD_TYPE=release` and disable logging to `~/.nvimlog`:
+Build the "developer version" with `BUILD_TYPE=release` if you want to disable logging to `~/.nvimlog`:
 
     $ brew install --HEAD --with-release neovim
 
@@ -31,10 +33,15 @@ To upgrade:
     $ brew update
     $ brew reinstall --HEAD neovim
 
+## Usage
+
+The program name is `nvim` (not `neovim`). Use this command to start:
+
+    nvim
 
 ## Filing an Issue
 
-If you run into problems, make sure to follow the
+If you run into problems, follow the
 [Troubleshooting](#troubleshooting) section below before filing an issue.  If
 you still have problems:
 
