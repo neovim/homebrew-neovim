@@ -3,8 +3,8 @@ class Neovim < Formula
   homepage "https://neovim.io"
 
   stable do
-    url "https://github.com/neovim/neovim/archive/v0.1.4.tar.gz"
-    sha256 "bb7e359eb83db20c5ec5984b470b249372b6dcd813ae2ccf72c01cce560f93e9"
+    url "https://github.com/neovim/neovim/archive/v0.1.5.tar.gz"
+    sha256 "f286ff7994ef1835272285425d65804063f112c91925fee3ef8865282a6d2b7e"
 
     # Third-party dependencies for latest release.
     resource "libuv" do
