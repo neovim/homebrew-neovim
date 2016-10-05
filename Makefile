@@ -9,7 +9,8 @@ SCRIPTS := scripts
 
 
 help:
-	@echo "Target rules"
+	@echo "Target rules:"
+	@echo
 	@echo "version   - Updates Neo Vim version based on last commit"
 
 
