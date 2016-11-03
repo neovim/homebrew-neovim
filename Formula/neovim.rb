@@ -98,7 +98,8 @@ class Neovim < Formula
     end
   end
 
-  option "with-release", "Compile in release mode"
+  option "with-dev", "Compile a Dev build. Enables debug information, logging,
+        and optimizations that don't interfere with debugging."
 
   depends_on "cmake" => :build
   depends_on "libtool" => :build
@@ -128,12 +129,7 @@ class Neovim < Formula
     mkdir "build" do
       ohai "Building Neovim."
 
-      build_type =
-        if build.with?("release")
-          "Release"
-        else
-          build.head? ? "Dev" : "RelWithDebInfo"
-        end
+      build_type = build.with?("dev") ? "Dev" : "RelWithDebInfo"
       cmake_args = std_cmake_args + ["-DDEPS_PREFIX=../deps-build/usr",
                                      "-DCMAKE_BUILD_TYPE=#{build_type}"]
       if OS.mac?
@@ -153,8 +149,10 @@ class Neovim < Formula
   def caveats; <<-EOS.undent
       The Neovim executable is called 'nvim'. To use your existing Vim
       configuration:
+
           ln -s ~/.vim ~/.config/nvim
           ln -s ~/.vimrc ~/.config/nvim/init.vim
+
       See ':help nvim' for more information on Neovim.
 
       When upgrading Neovim, check the following page for breaking changes:
