@@ -49,7 +49,7 @@ class Neovim < Formula
   end
 
   head do
-    url "https://github.com/neovim/neovim.git"
+    url "https://github.com/neovim/neovim.git", :shallow => false
 
     # Third-party dependencies for latest repo revision.
     resource "libuv" do
