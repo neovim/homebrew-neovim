@@ -1,43 +1,53 @@
-homebrew-neovim
-===============
+# homebrew-neovim
+
 [![Build Status](https://travis-ci.org/neovim/homebrew-neovim.svg?branch=master)](https://travis-ci.org/neovim/homebrew-neovim)
 
-Homebrew formula for neovim.
+Homebrew formula for Neovim.
 
-## Install (stable)
+## Installation
+
+Since this formula isn't part of Homebrew, add it as tap first:
+
+    $ brew tap neovim/neovim
 
 To install the latest stable release:
 
-    $ brew install neovim/neovim/neovim
-
-To **upgrade** from a previous version:
-
-    $ brew update
-    $ brew upgrade neovim
-
-To use Python plugins, see [`:help provider-python`][provider-python].
-
-## Install (unstable)
-
-To install the latest "developer version" pulled from the HEAD revision:
-
-    $ brew tap neovim/neovim
-    $ brew install --HEAD neovim
-
-Build the "developer version" with `BUILD_TYPE=release` if you want to disable logging to `~/.nvimlog`:
-
-    $ brew install --HEAD --with-release neovim
+    $ brew install neovim
 
 To upgrade:
 
     $ brew update
-    $ brew reinstall --HEAD neovim
+    $ brew upgrade neovim
+
+To install the latest, potentially unstable, version of Neovim from git HEAD:
+
+    $ brew install --HEAD neovim
+
+By default this formula builds Neovim with `CMAKE_BUILD_TYPE=RelWithDebInfo`.
+This enables compiler optimizations and adds debug information to the
+executable.
+
+If you should ever feel the urge to look beneath Neovim's skin, use either of
+the following two lines:
+
+    $ brew install --with-dev
+    $ brew install --with-dev --HEAD
+
+This builds with `CMAKE_BUILD_TYPE=Dev` instead. It enables all optimizations
+that don't interfere with debugging, adds debug information to the executable
+and enables logging (to `~/.nvimlog` by default).
+
+If you want to switch between build types, use `brew reinstall` with the same
+options instead.
 
 ## Usage
 
-The program name is `nvim` (not `neovim`). Use this command to start:
+The program name is `nvim` (not `neovim`).
 
-    nvim
+    $ nvim
+
+In nvim, run `:CheckHealth`. It checks for common problems and ensures best
+practices.
 
 ## Filing an Issue
 
@@ -110,5 +120,4 @@ you still have problems:
 [brew-common]: https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Troubleshooting.md#check-for-common-issues
 [brew-trouble]: https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Troubleshooting.md
 [clt-bug]: https://openradar.appspot.com/radar?id=6405426379751424
-[provider-python]: http://neovim.io/doc/user/provider.html
 [linuxbrew-dependencies]: https://github.com/Homebrew/linuxbrew#dependencies
