@@ -43,8 +43,8 @@ class Neovim < Formula
     end
 
     resource "jemalloc" do
-      url "https://github.com/jemalloc/jemalloc/releases/download/4.0.2/jemalloc-4.0.2.tar.bz2"
-      sha256 "0d8a9c8a98adb6983e0ccb521d45d9db1656ef3e71d0b14fb333f2c8138f4611"
+      url "https://github.com/jemalloc/jemalloc/releases/download/4.3.1/jemalloc-4.3.1.tar.bz2"
+      sha256 "f7bb183ad8056941791e0f075b802e8ff10bd6e2d904e682f87c8f6a510c278b"
     end
   end
 
@@ -93,8 +93,8 @@ class Neovim < Formula
     end
 
     resource "jemalloc" do
-      url "https://github.com/jemalloc/jemalloc/releases/download/4.0.2/jemalloc-4.0.2.tar.bz2"
-      sha256 "0d8a9c8a98adb6983e0ccb521d45d9db1656ef3e71d0b14fb333f2c8138f4611"
+      url "https://github.com/jemalloc/jemalloc/releases/download/4.3.1/jemalloc-4.3.1.tar.bz2"
+      sha256 "f7bb183ad8056941791e0f075b802e8ff10bd6e2d904e682f87c8f6a510c278b"
     end
   end
 
@@ -157,7 +157,7 @@ class Neovim < Formula
           ln -s ~/.vim ~/.config/nvim
           ln -s ~/.vimrc ~/.config/nvim/init.vim
       See ':help nvim' for more information.
-      
+
       Breaking changes (if any) are documented at:
           https://github.com/neovim/neovim/wiki/Following-HEAD
 
