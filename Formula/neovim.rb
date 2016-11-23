@@ -1,102 +1,9 @@
 class Neovim < Formula
   desc "Ambitious Vim-fork focused on extensibility and agility"
   homepage "https://neovim.io"
-
-  stable do
-    url "https://github.com/neovim/neovim/archive/v0.1.6.tar.gz"
-    sha256 "a9fe7aadd38ef015f82ec340f6b6c0629d02c9ca4d85352db0934ae511d2f02a"
-
-    # Third-party dependencies for latest release.
-    resource "libuv" do
-      url "https://github.com/libuv/libuv/archive/v1.8.0.tar.gz"
-      sha256 "906e1a5c673c95cb261adeacdb7308a65b4a8f7c9c50d85f3021364951fa9cde"
-    end
-
-    resource "msgpack" do
-      url "https://github.com/msgpack/msgpack-c/archive/cpp-1.0.0.tar.gz"
-      sha256 "afda64ca445203bb7092372b822bae8b2539fdcebbfc3f753f393628c2bcfe7d"
-    end
-
-    resource "luajit" do
-      url "https://raw.githubusercontent.com/neovim/deps/master/opt/LuaJIT-2.0.4.tar.gz"
-      sha256 "620fa4eb12375021bef6e4f237cbd2dd5d49e56beb414bee052c746beef1807d"
-    end
-
-    resource "luarocks" do
-      url "https://github.com/keplerproject/luarocks/archive/5d8a16526573b36d5b22aa74866120c998466697.tar.gz"
-      sha256 "cae709111c5701235770047dfd7169f66b82ae1c7b9b79207f9df0afb722bfd9"
-    end
-
-    resource "unibilium" do
-      url "https://github.com/mauke/unibilium/archive/v1.2.0.tar.gz"
-      sha256 "623af1099515e673abfd3cae5f2fa808a09ca55dda1c65a7b5c9424eb304ead8"
-    end
-
-    resource "libtermkey" do
-      url "http://www.leonerd.org.uk/code/libtermkey/libtermkey-0.18.tar.gz"
-      sha256 "239746de41c845af52bb3c14055558f743292dd6c24ac26c2d6567a5a6093926"
-    end
-
-    resource "libvterm" do
-      url "https://github.com/neovim/libvterm/archive/1b745d29d45623aa8d22a7b9288c7b0e331c7088.tar.gz"
-      sha256 "3fc75908256c0d158d6c2a32d39f34e86bfd26364f5404b7d9c03bb70cdc3611"
-    end
-
-    resource "jemalloc" do
-      url "https://github.com/jemalloc/jemalloc/releases/download/4.3.1/jemalloc-4.3.1.tar.bz2"
-      sha256 "f7bb183ad8056941791e0f075b802e8ff10bd6e2d904e682f87c8f6a510c278b"
-    end
-  end
-
-  head do
-    url "https://github.com/neovim/neovim.git", :shallow => false
-
-    # Third-party dependencies for latest repo revision.
-    resource "libuv" do
-      url "https://github.com/libuv/libuv/archive/v1.8.0.tar.gz"
-      sha256 "906e1a5c673c95cb261adeacdb7308a65b4a8f7c9c50d85f3021364951fa9cde"
-    end
-
-    resource "luv" do
-      url "https://github.com/luvit/luv/archive/146f1ce4c08c3b67f604c9ee1e124b1cf5c15cf3.tar.gz"
-      sha256 "3d537f8eb9fa5adb146a083eae22af886aee324ec268e2aa0fa75f2f1c52ca7a"
-    end
-
-    resource "msgpack" do
-      url "https://github.com/msgpack/msgpack-c/archive/cpp-1.0.0.tar.gz"
-      sha256 "afda64ca445203bb7092372b822bae8b2539fdcebbfc3f753f393628c2bcfe7d"
-    end
-
-    resource "luajit" do
-      url "https://raw.githubusercontent.com/neovim/deps/master/opt/LuaJIT-2.0.4.tar.gz"
-      sha256 "620fa4eb12375021bef6e4f237cbd2dd5d49e56beb414bee052c746beef1807d"
-    end
-
-    resource "luarocks" do
-      url "https://github.com/keplerproject/luarocks/archive/5d8a16526573b36d5b22aa74866120c998466697.tar.gz"
-      sha256 "cae709111c5701235770047dfd7169f66b82ae1c7b9b79207f9df0afb722bfd9"
-    end
-
-    resource "unibilium" do
-      url "https://github.com/mauke/unibilium/archive/v1.2.0.tar.gz"
-      sha256 "623af1099515e673abfd3cae5f2fa808a09ca55dda1c65a7b5c9424eb304ead8"
-    end
-
-    resource "libtermkey" do
-      url "http://www.leonerd.org.uk/code/libtermkey/libtermkey-0.18.tar.gz"
-      sha256 "239746de41c845af52bb3c14055558f743292dd6c24ac26c2d6567a5a6093926"
-    end
-
-    resource "libvterm" do
-      url "https://github.com/neovim/libvterm/archive/1b745d29d45623aa8d22a7b9288c7b0e331c7088.tar.gz"
-      sha256 "3fc75908256c0d158d6c2a32d39f34e86bfd26364f5404b7d9c03bb70cdc3611"
-    end
-
-    resource "jemalloc" do
-      url "https://github.com/jemalloc/jemalloc/releases/download/4.3.1/jemalloc-4.3.1.tar.bz2"
-      sha256 "f7bb183ad8056941791e0f075b802e8ff10bd6e2d904e682f87c8f6a510c278b"
-    end
-  end
+  url "https://github.com/neovim/neovim/archive/v0.1.6.tar.gz"
+  sha256 "a9fe7aadd38ef015f82ec340f6b6c0629d02c9ca4d85352db0934ae511d2f02a"
+  head "https://github.com/neovim/neovim.git", :shallow => false
 
   option "with-dev", "Compile a Dev build. Enables debug information, logging,
         and optimizations that don't interfere with debugging."
@@ -109,6 +16,51 @@ class Neovim < Formula
   depends_on "gettext"
   depends_on :python => :recommended if OS.mac? && MacOS.version <= :snow_leopard
 
+  resource "libuv" do
+    url "https://github.com/libuv/libuv/archive/v1.8.0.tar.gz"
+    sha256 "906e1a5c673c95cb261adeacdb7308a65b4a8f7c9c50d85f3021364951fa9cde"
+  end
+
+  resource "luv" do
+    url "https://github.com/luvit/luv/archive/146f1ce4c08c3b67f604c9ee1e124b1cf5c15cf3.tar.gz"
+    sha256 "3d537f8eb9fa5adb146a083eae22af886aee324ec268e2aa0fa75f2f1c52ca7a"
+  end
+
+  resource "msgpack" do
+    url "https://github.com/msgpack/msgpack-c/archive/cpp-1.0.0.tar.gz"
+    sha256 "afda64ca445203bb7092372b822bae8b2539fdcebbfc3f753f393628c2bcfe7d"
+  end
+
+  resource "luajit" do
+    url "https://raw.githubusercontent.com/neovim/deps/master/opt/LuaJIT-2.0.4.tar.gz"
+    sha256 "620fa4eb12375021bef6e4f237cbd2dd5d49e56beb414bee052c746beef1807d"
+  end
+
+  resource "luarocks" do
+    url "https://github.com/keplerproject/luarocks/archive/5d8a16526573b36d5b22aa74866120c998466697.tar.gz"
+    sha256 "cae709111c5701235770047dfd7169f66b82ae1c7b9b79207f9df0afb722bfd9"
+  end
+
+  resource "unibilium" do
+    url "https://github.com/mauke/unibilium/archive/v1.2.0.tar.gz"
+    sha256 "623af1099515e673abfd3cae5f2fa808a09ca55dda1c65a7b5c9424eb304ead8"
+  end
+
+  resource "libtermkey" do
+    url "http://www.leonerd.org.uk/code/libtermkey/libtermkey-0.18.tar.gz"
+    sha256 "239746de41c845af52bb3c14055558f743292dd6c24ac26c2d6567a5a6093926"
+  end
+
+  resource "libvterm" do
+    url "https://github.com/neovim/libvterm/archive/1b745d29d45623aa8d22a7b9288c7b0e331c7088.tar.gz"
+    sha256 "3fc75908256c0d158d6c2a32d39f34e86bfd26364f5404b7d9c03bb70cdc3611"
+  end
+
+  resource "jemalloc" do
+    url "https://github.com/jemalloc/jemalloc/releases/download/4.3.1/jemalloc-4.3.1.tar.bz2"
+    sha256 "f7bb183ad8056941791e0f075b802e8ff10bd6e2d904e682f87c8f6a510c278b"
+  end
+
   def install
     ENV.deparallelize
     ENV["HOME"] = buildpath
@@ -119,10 +71,8 @@ class Neovim < Formula
 
     cd "deps-build" do
       ohai "Building third-party dependencies."
-      system "cmake", "../third-party", "-DUSE_BUNDLED_BUSTED=OFF",
-             "-DUSE_BUNDLED_GPERF=OFF", "-DUSE_BUNDLED_LUV=OFF",
-             "-DUSE_EXISTING_SRC_DIR=ON",
-             *std_cmake_args
+      system "cmake", "../third-party", "-DUSE_BUNDLED_GPERF=OFF",
+                      "-DUSE_EXISTING_SRC_DIR=ON", *std_cmake_args
       system "make", "VERBOSE=1"
     end
 
