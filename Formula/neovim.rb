@@ -14,22 +14,17 @@ class Neovim < Formula
   depends_on "autoconf" => :build
   depends_on "pkg-config" => :build
   depends_on "jemalloc" => :recommended
+  depends_on "libuv"
+  depends_on "msgpack"
+  depends_on "unibilium"
+  depends_on "libtermkey"
+  depends_on "libvterm"
   depends_on "gettext"
   depends_on :python => :recommended if OS.mac? && MacOS.version <= :snow_leopard
-
-  resource "libuv" do
-    url "https://github.com/libuv/libuv/archive/v1.8.0.tar.gz"
-    sha256 "906e1a5c673c95cb261adeacdb7308a65b4a8f7c9c50d85f3021364951fa9cde"
-  end
 
   resource "luv" do
     url "https://github.com/luvit/luv/archive/146f1ce4c08c3b67f604c9ee1e124b1cf5c15cf3.tar.gz"
     sha256 "3d537f8eb9fa5adb146a083eae22af886aee324ec268e2aa0fa75f2f1c52ca7a"
-  end
-
-  resource "msgpack" do
-    url "https://github.com/msgpack/msgpack-c/archive/cpp-1.0.0.tar.gz"
-    sha256 "afda64ca445203bb7092372b822bae8b2539fdcebbfc3f753f393628c2bcfe7d"
   end
 
   resource "luajit" do
@@ -42,21 +37,6 @@ class Neovim < Formula
     sha256 "cae709111c5701235770047dfd7169f66b82ae1c7b9b79207f9df0afb722bfd9"
   end
 
-  resource "unibilium" do
-    url "https://github.com/mauke/unibilium/archive/v1.2.0.tar.gz"
-    sha256 "623af1099515e673abfd3cae5f2fa808a09ca55dda1c65a7b5c9424eb304ead8"
-  end
-
-  resource "libtermkey" do
-    url "http://www.leonerd.org.uk/code/libtermkey/libtermkey-0.18.tar.gz"
-    sha256 "239746de41c845af52bb3c14055558f743292dd6c24ac26c2d6567a5a6093926"
-  end
-
-  resource "libvterm" do
-    url "https://github.com/neovim/libvterm/archive/1b745d29d45623aa8d22a7b9288c7b0e331c7088.tar.gz"
-    sha256 "3fc75908256c0d158d6c2a32d39f34e86bfd26364f5404b7d9c03bb70cdc3611"
-  end
-
   def install
     ENV.deparallelize
     ENV["HOME"] = buildpath
@@ -67,8 +47,9 @@ class Neovim < Formula
 
     cd "deps-build" do
       ohai "Building third-party dependencies."
-      system "cmake", "../third-party", "-DUSE_BUNDLED_GPERF=OFF",
-                      "-DUSE_BUNDLED_JEMALLOC=OFF", "-DUSE_EXISTING_SRC_DIR=ON", *std_cmake_args
+      system "cmake", "../third-party", "-DUSE_BUNDLED_GPERF=OFF", "-DUSE_BUNDLED_LIBUV=OFF",
+                      "-DUSE_BUNDLED_MSGPACK=OFF", "-DUSE_BUNDLED_UNIBILIUM=OFF", "-DUSE_BUNDLED_LIBTERMKEY=OFF",
+                      "-DUSE_BUNDLED_LIBVTERM=OFF", "-DUSE_BUNDLED_JEMALLOC=OFF", "-DUSE_EXISTING_SRC_DIR=ON", *std_cmake_args
       system "make", "VERBOSE=1"
     end
 
@@ -78,6 +59,9 @@ class Neovim < Formula
       build_type = build.with?("dev") ? "Dev" : "RelWithDebInfo"
       cmake_args = std_cmake_args + ["-DDEPS_PREFIX=../deps-build/usr",
                                      "-DCMAKE_BUILD_TYPE=#{build_type}"]
+
+      cmake_args += ["-DENABLE_JEMALLOC=OFF"] if build.without?("jemalloc")
+
       if OS.mac?
         unless build.head?
           cmake_args += ["-DCMAKE_C_FLAGS_#{build_type.upcase}='-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1'"]
