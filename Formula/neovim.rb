@@ -13,6 +13,7 @@ class Neovim < Formula
   depends_on "automake" => :build
   depends_on "autoconf" => :build
   depends_on "pkg-config" => :build
+  depends_on "jemalloc" => :recommended
   depends_on "gettext"
   depends_on :python => :recommended if OS.mac? && MacOS.version <= :snow_leopard
 
@@ -56,11 +57,6 @@ class Neovim < Formula
     sha256 "3fc75908256c0d158d6c2a32d39f34e86bfd26364f5404b7d9c03bb70cdc3611"
   end
 
-  resource "jemalloc" do
-    url "https://github.com/jemalloc/jemalloc/releases/download/4.3.1/jemalloc-4.3.1.tar.bz2"
-    sha256 "f7bb183ad8056941791e0f075b802e8ff10bd6e2d904e682f87c8f6a510c278b"
-  end
-
   def install
     ENV.deparallelize
     ENV["HOME"] = buildpath
@@ -72,7 +68,7 @@ class Neovim < Formula
     cd "deps-build" do
       ohai "Building third-party dependencies."
       system "cmake", "../third-party", "-DUSE_BUNDLED_GPERF=OFF",
-                      "-DUSE_EXISTING_SRC_DIR=ON", *std_cmake_args
+                      "-DUSE_BUNDLED_JEMALLOC=OFF", "-DUSE_EXISTING_SRC_DIR=ON", *std_cmake_args
       system "make", "VERBOSE=1"
     end
 
