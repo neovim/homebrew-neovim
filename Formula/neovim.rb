@@ -47,7 +47,8 @@ class Neovim < Formula
 
     cd "deps-build" do
       ohai "Building third-party dependencies."
-      system "cmake", "../third-party", "-DUSE_BUNDLED_GPERF=OFF",
+      system "cmake", "../third-party", "-DUSE_BUNDLED_BUSTED=OFF",
+             "-DUSE_BUNDLED_GPERF=OFF",
              "-DUSE_BUNDLED_LIBUV=OFF",
              "-DUSE_BUNDLED_MSGPACK=OFF",
              "-DUSE_BUNDLED_UNIBILIUM=OFF",
