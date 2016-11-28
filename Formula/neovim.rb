@@ -13,7 +13,8 @@ class Neovim < Formula
   depends_on "automake" => :build
   depends_on "autoconf" => :build
   depends_on "pkg-config" => :build
-  depends_on "jemalloc" => :recommended
+  # Disable jemalloc, see https://github.com/neovim/neovim/issues/5681
+  # depends_on "jemalloc" => :recommended
   depends_on "libuv"
   depends_on "msgpack"
   depends_on "unibilium"
