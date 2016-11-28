@@ -66,7 +66,9 @@ class Neovim < Formula
       cmake_args = std_cmake_args + ["-DDEPS_PREFIX=../deps-build/usr",
                                      "-DCMAKE_BUILD_TYPE=#{build_type}"]
 
-      cmake_args += ["-DENABLE_JEMALLOC=OFF"] if build.without?("jemalloc")
+      # Disable jemalloc, see https://github.com/neovim/neovim/issues/5681
+      # cmake_args += ["-DENABLE_JEMALLOC=OFF"] if build.without?("jemalloc")
+      cmake_args += ["-DENABLE_JEMALLOC=OFF"]
 
       if OS.mac?
         unless build.head?
