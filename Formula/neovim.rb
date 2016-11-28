@@ -13,7 +13,6 @@ class Neovim < Formula
   depends_on "automake" => :build
   depends_on "autoconf" => :build
   depends_on "pkg-config" => :build
-  depends_on "jemalloc" => :recommended
   depends_on "libuv"
   depends_on "msgpack"
   depends_on "unibilium"
@@ -66,7 +65,9 @@ class Neovim < Formula
       cmake_args = std_cmake_args + ["-DDEPS_PREFIX=../deps-build/usr",
                                      "-DCMAKE_BUILD_TYPE=#{build_type}"]
 
-      cmake_args += ["-DENABLE_JEMALLOC=OFF"] if build.without?("jemalloc")
+      # Disable jemalloc, see https://github.com/neovim/neovim/issues/5681
+      # cmake_args += ["-DENABLE_JEMALLOC=OFF"] if build.without?("jemalloc")
+      cmake_args += ["-DENABLE_JEMALLOC=OFF"]
 
       if OS.mac?
         unless build.head?
