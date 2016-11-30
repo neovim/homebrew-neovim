@@ -70,10 +70,6 @@ class Neovim < Formula
       cmake_args += ["-DENABLE_JEMALLOC=OFF"]
 
       if OS.mac?
-        unless build.head?
-          cmake_args += ["-DCMAKE_C_FLAGS_#{build_type.upcase}='-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1'"]
-        end
-
         cmake_args += ["-DIconv_INCLUDE_DIRS:PATH=/usr/include",
                        "-DIconv_LIBRARIES:PATH=/usr/lib/libiconv.dylib"]
       end
