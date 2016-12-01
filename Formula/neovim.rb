@@ -19,6 +19,8 @@ class Neovim < Formula
   depends_on "libtermkey"
   depends_on "libvterm"
   depends_on "gettext"
+  depends_on "gperf" => :recommended if OS.linux?
+  depends_on "unzip" => :recommended if OS.linux?
   depends_on :python => :recommended if OS.mac? && MacOS.version <= :snow_leopard
 
   resource "luv" do
