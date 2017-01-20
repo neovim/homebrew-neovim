@@ -7,6 +7,8 @@ class Neovim < Formula
 
   option "with-dev", "Compile a Dev build. Enables debug information, logging,
         and optimizations that don't interfere with debugging."
+  option "with-debug-info", "Compile a Dev build. Enables debug information, logging,
+        and optimizations that don't interfere with debugging."
 
   depends_on "cmake" => :build
   depends_on "libtool" => :build
@@ -63,7 +65,13 @@ class Neovim < Formula
     mkdir "build" do
       ohai "Building Neovim."
 
-      build_type = build.with?("dev") ? "Dev" : "RelWithDebInfo"
+      build_type = if build.with?("dev")
+        "Dev"
+      elsif build.with?("debug-info")
+        "RelWithDebInfo"
+      else
+        "Release"
+      end
       cmake_args = std_cmake_args + ["-DDEPS_PREFIX=../deps-build/usr",
                                      "-DCMAKE_BUILD_TYPE=#{build_type}"]
 
