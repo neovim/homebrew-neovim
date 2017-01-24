@@ -23,9 +23,8 @@ To install the latest, potentially unstable, version of Neovim from git HEAD:
 
     brew install --HEAD neovim
 
-By default the formula sets `CMAKE_BUILD_TYPE=RelWithDebInfo`
-and `--with-jemalloc`. This enables compiler optimizations and adds debug
-information to the executable.
+By default the formula sets `CMAKE_BUILD_TYPE=RelWithDebInfo` (reasonably
+optimized, with debug info) and `--with-jemalloc`.
 
 To **disable jemalloc**, use `--without-jemalloc` in the install command, e.g.:
 
