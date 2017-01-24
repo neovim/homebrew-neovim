@@ -8,30 +8,33 @@ Homebrew formula for Neovim.
 
 Since this formula isn't part of Homebrew, add it as tap first:
 
-    $ brew tap neovim/neovim
+    brew tap neovim/neovim
 
 To install the latest stable release:
 
-    $ brew install neovim
+    brew install neovim
 
 To upgrade:
 
-    $ brew update
-    $ brew upgrade neovim
+    brew update
+    brew upgrade neovim
 
 To install the latest, potentially unstable, version of Neovim from git HEAD:
 
-    $ brew install --HEAD neovim
+    brew install --HEAD neovim
 
-By default this formula builds Neovim with `CMAKE_BUILD_TYPE=RelWithDebInfo`.
-This enables compiler optimizations and adds debug information to the
-executable.
+By default the formula sets `CMAKE_BUILD_TYPE=RelWithDebInfo`
+and `--with-jemalloc`. This enables compiler optimizations and adds debug
+information to the executable.
 
-If you should ever feel the urge to look beneath Neovim's skin, use either of
-the following two lines:
+To **disable jemalloc**, use `--without-jemalloc` in the install command, e.g.:
 
-    $ brew install --with-dev
-    $ brew install --with-dev --HEAD
+    brew install neovim --without-jemalloc
+
+To install the development version (verbose logging, full debug symbols):
+
+    brew install --with-dev
+    brew install --with-dev --HEAD
 
 This builds with `CMAKE_BUILD_TYPE=Dev` instead. It enables all optimizations
 that don't interfere with debugging, adds debug information to the executable
@@ -44,7 +47,7 @@ options instead.
 
 The program name is `nvim` (not `neovim`).
 
-    $ nvim
+    nvim
 
 In nvim, run `:CheckHealth`. It checks for common problems and ensures best
 practices.
@@ -85,17 +88,17 @@ you still have problems:
   Do so with the following sequence of commands:
 
   ```text
-  $ brew uninstall neovim --force
-  $ brew prune
-  $ brew tap neovim/neovim
-  $ brew tap --repair
-  $ brew install neovim --HEAD
+  brew uninstall neovim --force
+  brew prune
+  brew tap neovim/neovim
+  brew tap --repair
+  brew install neovim --HEAD
   ```
 * If you encounter the error `Failed to update tap: neovim/neovim`, try:
 
   ```text
-  $ brew untap neovim/neovim
-  $ brew tap neovim/neovim
+  brew untap neovim/neovim
+  brew tap neovim/neovim
   ```
 * Run `brew update` — then try again.
 * Run `brew doctor` — the doctor diagnoses common issues.
