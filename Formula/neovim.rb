@@ -71,6 +71,7 @@ class Neovim < Formula
 
       if OS.mac?
         cmake_args += ["-DJEMALLOC_LIBRARY=#{Formula["jemalloc"].opt_lib}/libjemalloc.a"] if build.with?("jemalloc")
+        cmake_args += ["-DMSGPACK_LIBRARY=#{Formula["msgpack"].opt_lib}/libmsgpackc.2.dylib"]
         cmake_args += ["-DIconv_INCLUDE_DIRS:PATH=/usr/include",
                        "-DIconv_LIBRARIES:PATH=/usr/lib/libiconv.dylib"]
       end
