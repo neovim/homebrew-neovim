@@ -72,9 +72,9 @@ you still have problems:
   install -v neovim/neovim/neovim`.  Paste the result of this in your ticket,
   and make sure to wrap it with a text fence so it renders correctly:
 
-      ```text
-      # output goes here
-      ```
+  ```text
+  # output goes here
+  ```
 
 ## Troubleshooting
 
