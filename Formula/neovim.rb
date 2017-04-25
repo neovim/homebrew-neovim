@@ -88,10 +88,8 @@ class Neovim < Formula
       After installing or upgrading, run the "CheckHealth" command:
           :CheckHealth
 
-      To use your existing Vim configuration:
-          ln -s ~/.vim ~/.config/nvim
-          ln -s ~/.vimrc ~/.config/nvim/init.vim
-      See ':help nvim' for more information.
+      See ':help nvim-from-vim' for information about how to use
+      your existing Vim configuration with Neovim.
 
       Breaking changes (if any) are documented at:
           https://github.com/neovim/neovim/wiki/Following-HEAD
