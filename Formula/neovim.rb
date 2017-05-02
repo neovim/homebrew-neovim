@@ -1,8 +1,8 @@
 class Neovim < Formula
   desc "Ambitious Vim-fork focused on extensibility and agility"
   homepage "https://neovim.io"
-  url "https://github.com/neovim/neovim/archive/v0.1.7.tar.gz"
-  sha256 "d8f885d019b1ad608f36ae23b8f1b15b7e33585e16f7514666ab6c9809bb4b7e"
+  url "https://github.com/neovim/neovim/archive/v0.2.0.tar.gz"
+  sha256 "72e263f9d23fe60403d53a52d4c95026b0be428c1b9c02b80ab55166ea3f62b5"
   head "https://github.com/neovim/neovim.git", :shallow => false
 
   option "with-dev", "Compile a Dev build. Enables debug information, logging,
