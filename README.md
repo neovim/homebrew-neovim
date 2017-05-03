@@ -118,6 +118,7 @@ you still have problems:
   then you're missing the dependency for cURL that allows downloads over TLS.
   Refer to your operating system's section in [Linuxbrew Dependencies][linuxbrew-dependencies]
   to fix this.
+* If you are on a fresh install of ubuntu that is somewhat minimial, you will need to make sure you have ``python-setuptools`` and ``unzip`` installed via apt.
 
 [brew-common]: https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Troubleshooting.md#check-for-common-issues
 [brew-trouble]: https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Troubleshooting.md
