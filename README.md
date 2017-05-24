@@ -42,6 +42,17 @@ and enables logging (to `~/.nvimlog` by default).
 If you want to switch between build types, use `brew reinstall` with the same
 options instead.
 
+## Dependencies
+### Linux
+- [linuxbrew](https://github.com/Homebrew/linuxbrew)
+- unzip
+- libtool
+
+### Ubuntu
+```sh
+apt-get install --no-install-recommends libtool unzip
+```
+
 ## Usage
 
 The program name is `nvim` (not `neovim`).
