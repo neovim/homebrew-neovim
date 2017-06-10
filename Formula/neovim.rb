@@ -39,6 +39,7 @@ class Neovim < Formula
   depends_on :python => :recommended if OS.mac? && MacOS.version <= :snow_leopard
 
   resource "luv" do
+    version "1.9.1-0"
     url "https://github.com/luvit/luv/archive/1.9.1-0.tar.gz"
     sha256 "86a199403856018cd8e5529c8527450c83664a3d36f52d5253cbe909ea6c5a06"
   end
