@@ -4,6 +4,7 @@ class Neovim < Formula
 
   stable do
     url "https://github.com/neovim/neovim/archive/v0.2.0.tar.gz"
+    sha256 "72e263f9d23fe60403d53a52d4c95026b0be428c1b9c02b80ab55166ea3f62b5"
     resource "luarocks" do
       url "https://github.com/luarocks/luarocks/archive/5d8a16526573b36d5b22aa74866120c998466697.tar.gz"
       sha256 "cae709111c5701235770047dfd7169f66b82ae1c7b9b79207f9df0afb722bfd9"
