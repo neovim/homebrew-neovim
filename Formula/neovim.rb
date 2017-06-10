@@ -67,7 +67,7 @@ class Neovim < Formula
              "-DUSE_BUNDLED_LIBVTERM=OFF",
              "-DUSE_BUNDLED_JEMALLOC=OFF",
              "-DUSE_EXISTING_SRC_DIR=ON", *std_cmake_args
-      system "make", "VERBOSE=1"
+      ENV.deparallelize { system "make", "VERBOSE=1" }
     end
 
     mkdir "build" do
